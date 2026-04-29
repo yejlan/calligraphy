@@ -6,9 +6,9 @@ spring:
       api-key: sk-aab6e95b57ef477a9c830fe5c2db675b
       model: qvq-max
   datasource:
-    url: jdbc:mysql://localhost:3306/software_c?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://monorail.proxy.rlwy.net:25323/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai
     username: root
-    password: lysandra061014
+    password: AIhXPiErZXMRjIIaAqPcmEdzRKuwVVuX
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
@@ -19,6 +19,7 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
+
 # Coze properties
 coze:
   api:
@@ -26,12 +27,14 @@ coze:
     botId-ppt: 7524921627365769256
     botId-video: 7529037562594836499
     baseUrl:  https://api.coze.cn
+
 # 火山引擎
 volc:
   api-key: 81dc70b0-c3c6-4387-a225-27b1051b349f
   img-model: doubao-seedream-3-0-t2i-250415
   chat-model: doubao-seed-1-6-250615
   prompt: ",以米字格字帖样式生成"
+
 avatar:
   url: wss://avatar.cn-huadong-1.xf-yun.com/v1/interact
   apiKey: f48991e553870afc6ffb6a8005318586
@@ -40,6 +43,7 @@ avatar:
   avatarId: 110017006
   vcn: x4_xiaozhong
   sceneId: 215316453426073600
+
 taichuai:
   url: http://10.10.5.59/ds7b/v1/chat/completions
   llm:
@@ -47,5 +51,6 @@ taichuai:
     model: DeepSeek-R1-Distill-Qwen-7B
     temperature: 0.6
     max_tokens: 1024
+
 server:
-  port: 2121
+  port: ${PORT:2121}
